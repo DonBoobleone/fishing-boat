@@ -4,9 +4,9 @@ local fishing_boat = table.deepcopy(data.raw["car"]["car"])
 fishing_boat.name = "fishing-boat"
 fishing_boat.icon = "__fishing-boat__/graphics/icons/fishing-boat.png"
 fishing_boat.icon_size = 64
-fishing_boat.collision_mask = {layers = {ground_tile = true, train = true}}--, object = true, is_object = true}}
-fishing_boat.collision_box = {{-1.2, -3}, {1.2, 3}} -- TODO
-fishing_boat.selection_box = {{-1.2, -3}, {1.2, 3}} -- TODO
+fishing_boat.collision_mask = { layers = { ground_tile = true, train = true } }
+fishing_boat.collision_box = { { -0.6, -1 }, { 0.6, 1 } } -- TODO
+fishing_boat.selection_box = { { -0.6, -1 }, { 0.6, 1 } } -- TODO
 fishing_boat.localised_description = { "entity-description.fishing-boat" }
 fishing_boat.selection_priority = 60
 fishing_boat.max_health = 300
@@ -54,8 +54,8 @@ fishing_boat.animation = {
         {
             priority = "low",
             direction_count = 128,
-            width = 1002,
-            height = 1002,
+            width = 512,
+            height = 512,
             stripes = {
                 {
                     filename = "__fishing-boat__/graphics/entity/fishing-boat/fishing-boat.png",
@@ -71,24 +71,69 @@ fishing_boat.animation = {
             shift = util.by_pixel(0, 0),
             scale = 0.5,
             max_advance = 0.2
+        },
+        {
+            priority = "low",
+            direction_count = 128,
+            width = 512,
+            height = 512,
+            stripes = {
+                {
+                    filename = "__fishing-boat__/graphics/entity/fishing-boat/fishing-boat-shadow.png",
+                    width_in_frames = 8,
+                    height_in_frames = 8
+                },
+                {
+                    filename = "__fishing-boat__/graphics/entity/fishing-boat/fishing-boat-2-shadow.png",
+                    width_in_frames = 8,
+                    height_in_frames = 8
+                }
+            },
+            shift = util.by_pixel(0, 0),
+            scale = 0.5,
+            max_advance = 0.2,
+            draw_as_shadow = true
         }
     }
 }
+--fishing_boat.water_reflection = nil
 
 -- TODO: add fishing net, maybe underwater animation for it?
--- Water reflection: TODO: check cargo ship/ironclad function for it.
+-- TODO: Water reflection: check cargo ship/ironclad function for it.
+-- TODO: Add color mask to the sails or cabin
+-- TODO: add smoke to make wvaes on water like cargo ships does?
 
 fishing_boat.light =
 {
     type = "basic",
     intensity = 1,
-    size = 20,
+    size = 16,
     minimum_darkness = 0.3,
     flicker_interval = 30,
-    shift = {0, 0}, -- TODO: position to actual lantern on graphics
+    shift = { 0, 0 }, -- TODO: position to actual lantern on graphics
+    --Idea: more small lanterns around the ship?
 }
 
-fishing_boat.turret_animation = nil
+fishing_boat.turret_animation =
+{
+    layers = {
+        {
+            animation_speed = 1,
+            direction_count = 1,
+            frame_count = 1,
+            height = 1,
+            width = 1,
+            max_advance = 0.2,
+            stripes = {
+                {
+                    filename = "__core__/graphics/empty.png",
+                    height_in_frames = 1,
+                    width_in_frames = 1
+                }
+            }
+        }
+    }
+}
 fishing_boat.light_animation = nil
 fishing_boat.corpse = nil
 

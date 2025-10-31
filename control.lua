@@ -1,6 +1,6 @@
 -- control.lua
 -- This code is adapted from the Cargo Ships mod[](https://mods.factorio.com/mod/cargo-ships) by schnurrebutz and rudegrass, licensed under GPLv3.
--- Original code copied from AAI Vehicles: Ironclad by Earendel[](https://mods.factorio.com/mod/aai-vehicles-ironclad).
+-- Original code from AAI Vehicles: Ironclad by Earendel[](https://mods.factorio.com/mod/aai-vehicles-ironclad).
 
 local math2d = require("math2d")
 
