@@ -101,7 +101,7 @@ fishing_boat.animation = {
 -- TODO: add fishing net, maybe underwater animation for it?
 -- TODO: Water reflection: check cargo ship/ironclad function for it.
 -- TODO: Add color mask to the sails or cabin
--- TODO: add smoke to make wvaes on water like cargo ships does?
+-- TODO: add smoke to make waves on water like cargo ships
 
 fishing_boat.light =
 {

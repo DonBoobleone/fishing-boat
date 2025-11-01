@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 11. 01. 2025
+  Features:
+    - Fish can now breed on their own (optional, default=true)
+  Graphics:
+    - Updated fishing-boat icon.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 10. 31. 2025
   Major Features:
