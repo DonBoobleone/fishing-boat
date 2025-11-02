@@ -5,7 +5,8 @@ data:extend({
         name = "thanks-for-all-the-fish",
         setting_type = "startup",
         default_value = true,
-        localised_description = {"If enabled fish will breed in the wild on their own"}
+        order = "a",
+        localised_description = {"", "If enabled fish will breed in the wild on their own"}
     },
     {
         type = "int-setting",
@@ -14,7 +15,8 @@ data:extend({
         default_value = 256,
         minimum_value = 16,
         maximum_value = 512,
-        localised_description = {"Max fish in a chunk full of water."}
+        order = "b",
+        localised_description = {"", "Max fish in a chunk full of water. Only applies if 'Thanks for all the fish' is enabled."}
     },
     {
         type = "int-setting",
@@ -23,6 +25,7 @@ data:extend({
         default_value = 60,
         minimum_value = 30,
         maximum_value = 600,
-        localised_description = {"60 tick means every second 1 random chunk has a chance to breed."}
+        order = "c",
+        localised_description = {"", "In ticks, 1 random chunk at a time. Only applies if 'Thanks for all the fish' is enabled."}
     }
 })
