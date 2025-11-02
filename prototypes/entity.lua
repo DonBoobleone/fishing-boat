@@ -5,8 +5,8 @@ fishing_boat.name = "fishing-boat"
 fishing_boat.icon = "__fishing-boat__/graphics/icons/fishing-boat.png"
 fishing_boat.icon_size = 64
 fishing_boat.collision_mask = { layers = { ground_tile = true, train = true } }
-fishing_boat.collision_box = { { -0.6, -1 }, { 0.6, 1 } } -- TODO
-fishing_boat.selection_box = { { -0.6, -1 }, { 0.6, 1 } } -- TODO
+fishing_boat.collision_box = { { -0.75, -1.1 }, { 0.75, 1.1 } }
+fishing_boat.selection_box = { { -0.75, -1.1 }, { 0.75, 1.1 } }
 fishing_boat.localised_description = { "entity-description.fishing-boat" }
 fishing_boat.selection_priority = 60
 fishing_boat.max_health = 300
@@ -113,7 +113,6 @@ fishing_boat.water_reflection = {
 }
 
 -- TODO: add fishing net, maybe underwater animation for it?
--- TODO: Water reflection: check cargo ship/ironclad function for it.
 -- TODO: Add color mask to the sails or cabin
 -- TODO: add smoke to make waves on water like cargo ships
 
@@ -150,5 +149,9 @@ fishing_boat.turret_animation =
 }
 fishing_boat.light_animation = nil
 fishing_boat.corpse = nil
+fishing_boat.create_ghost_on_death = false
+fishing_boat.allow_remote_driving =true
+-- fishing_boat.minimap_representation = {} -- TODO: fishing net icon?
+-- fishing_boat.dying_explosion = nil -- TODO repalce with wood sprinkels?
 
 data:extend({ fishing_boat })

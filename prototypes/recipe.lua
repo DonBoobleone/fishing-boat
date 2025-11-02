@@ -7,9 +7,9 @@ data:extend({
         icon_size = 64,
         category = "crafting",
         subgroup = "transport",
-        order = "b[personal-transport]-f[fishing-boat]",
+        order = "a[fishing-boat]",
         enabled = false,
-        auto_recycle = false,
+        auto_recycle = true,
         energy_required = 5,
         ingredients = {
             { type = "item", name = "wood", amount = 20 }
