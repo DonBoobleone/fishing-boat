@@ -22,7 +22,7 @@ fishing_boat.auto_sort_inventory = true -- will automatically stack spoilage
 fishing_boat.energy_source = { type = "void" }
 fishing_boat.guns = {}
 
-fishing_boat.working_sound = { --TODO: check all sounds
+fishing_boat.working_sound = {
     sound = {
         filename = "__fishing-boat__/sound/ship-sailing.ogg",
         volume = 0.7,
@@ -96,7 +96,21 @@ fishing_boat.animation = {
         }
     }
 }
---fishing_boat.water_reflection = nil
+
+fishing_boat.water_reflection = {
+    pictures = {
+        filename = "__fishing-boat__/graphics/entity/fishing-boat/fishing-boat-reflection-sheet.png",
+        line_length = 8,
+        width = 276,
+        height = 276,
+        frame_count = 128,
+        variation_count = 128,
+        shift = util.by_pixel(0, 36),
+        scale = 1
+    },
+    rotate = false,
+    orientation_to_variation = true
+}
 
 -- TODO: add fishing net, maybe underwater animation for it?
 -- TODO: Water reflection: check cargo ship/ironclad function for it.
