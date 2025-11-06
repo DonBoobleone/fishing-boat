@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 11. 02. 2025
+  Optimizations:
+    - Optimized scaling of how fish breed.
+  Bugfixes:
+    - Fixed crash on starting new map.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 11. 05. 2025
   Compatibility:
