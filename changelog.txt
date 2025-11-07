@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.6
+Date: 11. 07. 2025
+  Bugfixes:
+    - Fixed crash on adding to existing save.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.5
-Date: 11. 02. 2025
+Date: 11. 06. 2025
   Optimizations:
     - Optimized scaling of how fish breed.
   Bugfixes:
