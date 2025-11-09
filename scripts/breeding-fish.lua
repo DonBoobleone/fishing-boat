@@ -5,11 +5,11 @@ local breeding_cycle = settings.startup["breeding-cycle"].value
 local breeding_limit = settings.startup["breeding-limit"].value
 local breeding_space_ratio = 1024 / breeding_limit
 
--- New: Scaling parameters; adjust divisor for desired growth rate
+-- Scaling parameters; adjust divisor for desired growth rate
 local max_chunks_per_cycle = 128
 local chunks_scale_divisor = 1000 -- e.g., N ~ total_chunks / 1000, min 1
 
--- New: Track generated chunks per surface
+-- Track generated chunks per surface
 storage.generated_chunks = storage.generated_chunks or {}
 
 local function get_chunk_area(chunk_pos)
@@ -37,7 +37,7 @@ end
 local function breed_in_chunk(surface, chunk_pos)
     local area = get_chunk_area(chunk_pos)
 
-    local fish = surface.find_entities_filtered { area = area, type = "fish" }
+    local fish = surface.find_entities_filtered{area = area, type = "fish"}
     local fish_count = #fish
     if fish_count < 2 or fish_count > breeding_limit then
         return
@@ -62,8 +62,16 @@ local function breed_in_chunk(surface, chunk_pos)
             return
         end
 
-        local tile = water_tiles[math.random(1, #water_tiles)]
-        local entity = surface.create_entity { name = "fish", position = tile.position }
+        local max_tries = math.max(1, math.floor(#water_tiles / 2))
+        for _ = 1, max_tries do
+            local tile = water_tiles[math.random(1, #water_tiles)]
+            if surface.can_place_entity{name = "fish", position = tile.position} then
+                local entity = surface.create_entity{name = "fish", position = tile.position}
+                if entity then
+                    return
+                end
+            end
+        end
     end
 end
 
