@@ -5,8 +5,8 @@ fishing_boat.name = "fishing-boat"
 fishing_boat.icon = "__fishing-boat__/graphics/icons/fishing-boat.png"
 fishing_boat.icon_size = 64
 fishing_boat.collision_mask = { layers = { ground_tile = true, train = true } }
-fishing_boat.collision_box = { { -0.75, -1.1 }, { 0.75, 1.1 } }
-fishing_boat.selection_box = { { -0.75, -1.1 }, { 0.75, 1.1 } }
+fishing_boat.collision_box = { { -0.9, -1.1 }, { 0.9, 1.3 } }
+fishing_boat.selection_box = { { -0.9, -1.1 }, { 0.9, 1.3 } }
 fishing_boat.localised_description = { "entity-description.fishing-boat" }
 fishing_boat.selection_priority = 60
 fishing_boat.max_health = 300
@@ -112,23 +112,39 @@ fishing_boat.water_reflection = {
     orientation_to_variation = true
 }
 
--- TODO: add fishing net, maybe underwater animation for it?
+-- TODO ideas
 -- TODO: Add color mask to the sails or cabin
 -- TODO: add smoke to make waves on water like cargo ships
 
-fishing_boat.light =
-{
-    type = "basic",
-    intensity = 1,
-    size = 16,
-    minimum_darkness = 0.3,
-    flicker_interval = 30,
-    shift = { 0, 0 }, -- TODO: position to actual lantern on graphics
-    --Idea: more small lanterns around the ship?
+-- Positioned to match lantern graphics in triangle formation: one front, two rear sides
+fishing_boat.light = {
+    {
+        type = "basic",
+        intensity = 1,
+        size = 10,
+        minimum_darkness = 0.31,
+        flicker_interval = 15,
+        shift = {0, -2.0} -- front
+    },
+    {
+        type = "basic",
+        intensity = 1,
+        size = 7,
+        minimum_darkness = 0.35,
+        flicker_interval = 13,
+        shift = {-1.3, 1.5} -- rear left
+    },
+    {
+        type = "basic",
+        intensity = 1,
+        size = 7,
+        minimum_darkness = 0.35,
+        flicker_interval = 11,
+        shift = {1.3, 1.5} -- rear right
+    }
 }
 
-fishing_boat.turret_animation =
-{
+fishing_boat.turret_animation = {
     layers = {
         {
             animation_speed = 1,
