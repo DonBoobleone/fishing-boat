@@ -1,9 +1,9 @@
 {
   "name": "fishing-boat", 
-  "version": "0.2.0",
+  "version": "0.3.0",
   "title": "Fishing Boat",
   "author": "Don Boobleone",
   "factorio_version": "2.0",
-  "dependencies": ["base >= 2.0.69", "?cargo-ships>=1.0.27", "?pelagos>=0.21.0", "?canal-excavator>=1.5.1", "?aai-programmable-vehicles" ],
-  "description": "A small wooden sailboat that catches fish in a 4 tile radius\nFish can now breed in the wild (optional)"
+  "dependencies": ["base >= 2.0.69", "?natural-fish-dynamics>=0.1.0","?cargo-ships>=1.0.27", "?pelagos>=0.21.0", "?canal-excavator>=1.5.1", "?aai-programmable-vehicles" ],
+  "description": "A small wooden sailboat that catches fish in a 4 tile radius"
 }

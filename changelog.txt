@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 11. 20. 2025
+  Major Features:
+    - Separated fish breeding into a now optional dependency mod: natural-fish-dynamics
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 11. 10. 2025
   Graphics:
