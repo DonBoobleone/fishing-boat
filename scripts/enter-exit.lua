@@ -1,10 +1,12 @@
--- This code is adapted from the Cargo Ships mod[](https://mods.factorio.com/mod/cargo-ships) by schnurrebutz and rudegrass.
+-- This code is adapted from the Cargo Ships mo[](https://mods.factorio.com/mod/cargo-ships) by schnurrebutz and rudegrass.
 
 local math2d = require("math2d")
 
 local enter_ship_distance = 5
 
-local enter_ship_entities = {["fishing-boat"] = true}
+local function is_fishing_boat(name)
+    return name == "fishing-boat" or (script.active_mods["aai-programmable-vehicles"] and name:match("^fishing%-boat"))
+end
 
 -- Shared functions
 local function vehicle_exit(player, position)
@@ -45,7 +47,7 @@ local function on_enter_vehicle_keypress(event)
 
     storage.fishing_boat_driving_state_locks = storage.fishing_boat_driving_state_locks or {}
     if character.vehicle then
-        if enter_ship_entities[character.vehicle.name] then
+        if is_fishing_boat(character.vehicle.name) then
             local position = character.surface.find_non_colliding_position(character.name, character.position, enter_ship_distance, 0.25, true)
             if position then
                 storage.fishing_boat_driving_state_locks[player.index] = {valid_time = game.tick + 1, position = position}
@@ -64,13 +66,13 @@ local function on_enter_vehicle_keypress(event)
         for _, vehicle in pairs(vehicles) do
             local distance = math2d.position.distance(vehicle.position, character.position)
             if distance < closest_distance then
-                if distance < enter_vehicle_distance or (enter_ship_entities[vehicle.name] and distance < enter_ship_distance) then
+                if distance < enter_vehicle_distance or (is_fishing_boat(vehicle.name) and distance < enter_ship_distance) then
                     closest_vehicle = vehicle
                     closest_distance = distance
                 end
             end
         end
-        if closest_vehicle and enter_ship_entities[closest_vehicle.name] then
+        if closest_vehicle and is_fishing_boat(closest_vehicle.name) then
             storage.fishing_boat_driving_state_locks[player.index] = {valid_time = game.tick + 1, vehicle = closest_vehicle}
             vehicle_enter(player, closest_vehicle)
         end

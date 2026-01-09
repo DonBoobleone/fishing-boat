@@ -7,7 +7,7 @@ data:extend({
         order = "a",
         key_sequence = "",
         linked_game_control = "toggle-driving",
-        --consuming = "game-only" -- would prevent vehicle is unaccesible message, but disables normal car behavior
-        -- does work when cargo ships are enabled
+        -- consuming = "game-only" -- would prevent "vehicle is unaccesible message", but disables normal car behavior
+        -- When Cargo-ships are enabled this bug doesn't exist
     }
 })

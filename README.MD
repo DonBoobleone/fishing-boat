@@ -2,6 +2,9 @@
 This mod adds:
 A wooden sailboat. Requires no fuel, catches fish while driving near them.
 
+## Options
+Fishing script can be enabled/disabled and boat used as vanilla sailboat instead. (disables scripts and UPS drain, can be toggled in existing saves)
+
 ## Tip
 You can catch and release fish by dropping them in water with 'Z'
 [Watch video](https://www.youtube.com/watch?v=rKjyyxmKQec)

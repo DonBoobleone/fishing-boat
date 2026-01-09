@@ -4,7 +4,8 @@ local fishing_boat = table.deepcopy(data.raw["car"]["car"])
 fishing_boat.name = "fishing-boat"
 fishing_boat.icon = "__fishing-boat__/graphics/icons/fishing-boat.png"
 fishing_boat.icon_size = 64
-fishing_boat.collision_mask = { layers = { ground_tile = true, train = true } }
+fishing_boat.collision_mask = { layers = { ground_tile = true, train = true, object = true } }
+--TODO: check if changed to collision_mask = {layers = {item = true, meltable = true, object = true, player = true, ground_tile = true, is_object = true, is_lower_object = true}}
 fishing_boat.collision_box = { { -0.9, -1.1 }, { 0.9, 1.3 } }
 fishing_boat.selection_box = { { -0.9, -1.1 }, { 0.9, 1.3 } }
 fishing_boat.localised_description = { "entity-description.fishing-boat" }
