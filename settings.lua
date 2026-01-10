@@ -1,5 +1,5 @@
 -- settings.lua
-data:extend({
+--[[ data:extend({
     {
         type = "bool-setting",
         name = "enable-automatic-fishing",
@@ -7,4 +7,4 @@ data:extend({
         default_value = true,
         order = "fishing-boat-a"
     }
-})
+}) ]]
