@@ -12,7 +12,7 @@ data:extend({
         prerequisites = {},
         research_trigger = {
             type = "mine-entity",
-            entity = "fish"
+            entities = {"fish"}
         },
         order = "c-g-d"
     }

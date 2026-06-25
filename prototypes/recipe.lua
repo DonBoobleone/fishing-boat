@@ -5,7 +5,7 @@ data:extend({
         name = "fishing-boat",
         icon = "__fishing-boat__/graphics/icons/fishing-boat.png",
         icon_size = 64,
-        category = "crafting",
+        categories = {"crafting"},
         subgroup = "transport",
         order = "a[fishing-boat]",
         enabled = false,

@@ -1,9 +1,6 @@
 # Fishing boat - A Mod for Factorio
 This mod adds:
-A wooden sailboat. Requires no fuel, catches fish while driving near them.
-
-## Options
-Fishing script can be enabled/disabled and boat used as vanilla sailboat instead. (disables scripts and UPS drain, can be toggled in existing saves)
+A wooden sailboat. Requires no fuel, catches fish while sailing near them.
 
 ## Tip
 You can catch and release fish by dropping them in water with 'Z'
@@ -17,7 +14,7 @@ You can catch and release fish by dropping them in water with 'Z'
 - Planet Pelagos - A nice tropical Planet of fish and coconuts
 
 ## Compatibility
-- AAI Programmable Vehicles - Allows automation of fishing (not: increases performance cost)
+- AAI Programmable Vehicles - Allows automation of fishing (note: increases performance cost)
 
 ## Credits
 This mod incorporates ship entering/exiting code adapted from the Cargo Ships mod by schnurrebutz and rudegrass.
